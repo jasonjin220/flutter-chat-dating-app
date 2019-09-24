@@ -9,12 +9,10 @@ The app was created to simulate all the system behind the UI kit in the link. Th
 The images below shows the inspiration concept of the app.
 
 <p align="center">Explore Screen Gif</p>
-<p align="center">
-  <img height="500" src="screenshots/all_images.png">
-</p>
+![alt text](screenshots/all_images.png)
 
 ## Design Details
-As exposed on the inspiration video, there's all the design details also present in this app.
+As exposed on the inspiration images, there's all the design details also present in this app.
 
 ## Notes
-Completed App with full functionality(Is Responsive and includes all animations)
+To be completed
