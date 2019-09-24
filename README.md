@@ -10,7 +10,7 @@ The images below shows the inspiration concept of the app.
 
 <p align="center">All Screens</p>
 <p align="center">
-  <img height="350" width="350" src="screenshots/all_images.png">
+  <img height="250" width="250" src="screenshots/all_images.png">
 </p>
 
 Listing Screen             |  Detail Screen
