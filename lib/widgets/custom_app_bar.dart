@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget{
 	
-	final double height;
-
-    const CustomAppBar({Key key, this.height}) : super(key: key);
-	
 	@override
 	Widget build(BuildContext context) {
 		return Stack(
 			children: <Widget>[
 				Container(
-					height: height,
 					decoration: BoxDecoration(
 						gradient: LinearGradient(
 							begin: Alignment.bottomLeft,
