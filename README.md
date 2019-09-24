@@ -1,17 +1,20 @@
 # Chat - DatingApp
 
-Chat concept for a dating app
+App concept created with android using flutter programming language, inspired by [Chat - DatingApp.](https://www.uplabs.com/posts/chat-datingapp) design found on uplabs.
 
-## Getting Started
+## About
+The app was created to simulate all the system behind the UI kit in the link. There's no code on backend or other web service. The app is all contained in this repository. The models classes was created to better representate an official development, the repositories classes simulate a web request.
 
-This project is a starting point for a Flutter application.
+## The Inspiration
+The images below shows the inspiration concept of the app.
 
-A few resources to get you started if this is your first Flutter project:
+<p align="center">Explore Screen Gif</p>
+<p align="center">
+  <img height="500" src="screenshots/all_images.png">
+</p>
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+## Design Details
+As exposed on the inspiration video, there's all the design details also present in this app.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
-# flutter_chat_dating_app
+## Notes
+Completed App with full functionality(Is Responsive and includes all animations)
