@@ -8,8 +8,9 @@ The app was created to simulate all the system behind the UI kit in the link. Th
 ## The Inspiration
 The images below shows the inspiration concept of the app.
 
-<p align="center">Explore Screen Gif</p>
-![alt text](screenshots/all_images.png)
+All Screens            |  Listing Screen             |  Detail Screen
+:-------------------------:|:-------------------------:|:-------------------------:
+![](screenshots/all_images.png)  |  ![](screenshots/chat.jpg)  |  ![](screenshots/chat_listing.jpg)
 
 ## Design Details
 As exposed on the inspiration images, there's all the design details also present in this app.
