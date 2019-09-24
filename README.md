@@ -8,15 +8,14 @@ The app was created to simulate all the system behind the UI kit in the link. Th
 ## The Inspiration
 The images below shows the inspiration concept of the app.
 
-<p align="center">Listing Screen </p>
+<p align="center">All Screens</p>
 <p align="center">
-  <img height="250" width="250" src="screenshots/chat.jpg">
+  <img src="screenshots/all_images.png">
 </p>
 
-<p align="center">Detail Screen</p>
-<p align="center">
-  <img height="250" width="250" src="screenshots/chat_listing.jpg">
-</p>
+Listing Screen             |  Detail Screen
+:-------------------------:|:-------------------------:
+![](screenshots/chat.jpg)  |  ![](screenshots/chat_listing.jpg)
 
 ## Design Details
 As exposed on the inspiration images, there's all the design details also present in this app.
