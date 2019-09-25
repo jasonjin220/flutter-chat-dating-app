@@ -89,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
 													children: <Widget>[
 														Expanded(
 															child: Container(
-																padding: EdgeInsets.symmetric(horizontal: 20.0),
 																decoration: BoxDecoration(
 																	color: Colors.white,
 																),
@@ -117,30 +116,26 @@ class _MyHomePageState extends State<MyHomePage> {
 	}
 	
 	Widget topContainer() {
-		return Column(
-			mainAxisSize: MainAxisSize.min,
-			children: <Widget>[
-				SizedBox(height: 20.0,),
-				Row(
-					mainAxisAlignment: MainAxisAlignment.spaceBetween,
-					children: <Widget>[
-						Text(
-							"Sunday",
-							style: TextStyle(
-								fontSize: 24,
-								fontWeight: FontWeight.bold,
-								color: Colors.black,
-							),
-						),
-						Icon(
-							Icons.more_horiz,
-							size: 24,
+		return Padding(
+			padding: EdgeInsets.all(20.0),
+			child: Row(
+				mainAxisAlignment: MainAxisAlignment.spaceBetween,
+				children: <Widget>[
+					Text(
+						"Sunday",
+						style: TextStyle(
+							fontSize: 24,
+							fontWeight: FontWeight.bold,
 							color: Colors.black,
 						),
-					],
-				),
-				SizedBox(height: 20.0,),
-			],
+					),
+					Icon(
+						Icons.more_horiz,
+						size: 24,
+						color: Colors.black,
+					),
+				],
+			),
 		);
 	}
 	
