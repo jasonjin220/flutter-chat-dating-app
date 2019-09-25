@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_chat_dating_app/widgets/chat_listing_content.dart';
 import 'package:flutter_chat_dating_app/widgets/custom_app_bar.dart';
+import 'package:flutter_chat_dating_app/widgets/friends_list_item.dart';
 
 void main() => runApp(MyApp());
 
@@ -68,67 +70,16 @@ class _MyHomePageState extends State<MyHomePage> {
 												primary: false,
 												shrinkWrap: true,
 												scrollDirection: Axis.horizontal,
+												itemCount: lChatItems == null ? 0 : lChatItems.length,
 												controller: scrollController,
-												itemCount: lChatItems.length,
 												itemBuilder: (BuildContext context, int index){
-													return InkWell(
-														onTap: (){},
-														child: Padding(
-															padding: EdgeInsets.only(right: 16.0),
-															child: Column(
-																children: <Widget>[
-																	Stack(
-																		children: <Widget>[
-																			ClipOval(
-																				child: Image.network(
-																					"https://via.placeholder.com/150",
-																					height: MediaQuery.of(context).size.height * 0.10,
-																					width: MediaQuery.of(context).size.height * 0.10,
-																					fit: BoxFit.cover,
-																				),
-																			),
-																			Positioned.fill(
-																				child: ClipOval(
-																					child: Material(
-																						color: Colors.transparent,
-																						child: InkWell(
-																							splashColor: Colors.white.withOpacity(0.4),
-																							onTap: () {},
-																						),
-																					),
-																				),
-																			),
-																		],
-																	),
-																	Padding(
-																		padding: EdgeInsets.only(top: 8.0),
-																		child: Text(
-																			lChatItems[index],
-																			style: TextStyle(
-																				fontSize: 14.0,
-																				fontWeight: FontWeight.w300,
-																			),
-																			textAlign: TextAlign.center,
-																		),
-																	),
-																],
-															),
-														),
-													);
+													return FriendsListItem(lChatItem: lChatItems[index],);
 												},
 											),
 										),
 									),
 									Expanded(
-										child: Container(
-											decoration: BoxDecoration(
-												color: Colors.white,
-												borderRadius: BorderRadius.only(
-													topLeft: Radius.circular(32.0),
-													topRight: Radius.circular(32.0),
-												),
-											),
-										),
+										child: ChatListingContent(),
 									),
 								],
 							),
