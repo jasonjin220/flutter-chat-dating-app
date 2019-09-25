@@ -56,14 +56,14 @@ class _MyHomePageState extends State<MyHomePage> {
 					CustomAppBar(),
 					Positioned.fill(
 						child: Padding(
-							padding: EdgeInsets.only(top: 60.0 + 40.0),
+							padding: EdgeInsets.only(top: 60.0 + 20.0),
 							child: Column(
 								mainAxisSize: MainAxisSize.max,
 								children: <Widget>[
 									Padding(
-										padding: EdgeInsets.all(16.0),
+										padding: EdgeInsets.symmetric(horizontal: 16.0,vertical: 16.0),
 										child: Container(
-											height: MediaQuery.of(context).size.height * 0.16,
+											height: MediaQuery.of(context).size.height * 0.14,
 											child: ListView.builder(
 												primary: false,
 												shrinkWrap: true,
@@ -89,9 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
 													children: <Widget>[
 														Expanded(
 															child: Container(
-																padding: EdgeInsets.symmetric(horizontal: 16.0),
+																padding: EdgeInsets.symmetric(horizontal: 20.0),
 																decoration: BoxDecoration(
-																	color: Colors.blueAccent,
+																	color: Colors.white,
+																),
+																child: Column(
+																	children: <Widget>[
+																		topContainer(),
+																		chatListContainer(),
+																	],
 																),
 															),
 														),
@@ -106,6 +112,44 @@ class _MyHomePageState extends State<MyHomePage> {
 						),
 					),
 				],
+			),
+		);
+	}
+	
+	Widget topContainer() {
+		return Column(
+			mainAxisSize: MainAxisSize.min,
+			children: <Widget>[
+				SizedBox(height: 20.0,),
+				Row(
+					mainAxisAlignment: MainAxisAlignment.spaceBetween,
+					children: <Widget>[
+						Text(
+							"Sunday",
+							style: TextStyle(
+								fontSize: 24,
+								fontWeight: FontWeight.bold,
+								color: Colors.black,
+							),
+						),
+						Icon(
+							Icons.more_horiz,
+							size: 24,
+							color: Colors.black,
+						),
+					],
+				),
+				SizedBox(height: 20.0,),
+			],
+		);
+	}
+	
+	Widget chatListContainer() {
+		return Expanded(
+			child: Container(
+				decoration: BoxDecoration(
+					color: Colors.blueAccent,
+				),
 			),
 		);
 	}
