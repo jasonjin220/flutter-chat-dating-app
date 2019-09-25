@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_chat_dating_app/widgets/chat_listing_content.dart';
-import 'package:flutter_chat_dating_app/widgets/custom_app_bar.dart';
+import 'package:flutter_chat_dating_app/components/bottom_bar.dart';
+import 'package:flutter_chat_dating_app/components/custom_app_bar.dart';
 import 'package:flutter_chat_dating_app/widgets/friends_list_item.dart';
 
 void main() => runApp(MyApp());
@@ -17,15 +17,12 @@ class MyApp extends StatelessWidget {
 				primarySwatch: Colors.blue,
 				fontFamily: 'RobotoMono',
 			),
-			home: MyHomePage(title: 'Flutter Demo Home Page'),
+			home: MyHomePage(),
 		);
 	}
 }
 
 class MyHomePage extends StatefulWidget {
-	MyHomePage({Key key, this.title}) : super(key: key);
-	final String title;
-	
 	@override
 	_MyHomePageState createState() => _MyHomePageState();
 }
@@ -50,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
 		super.dispose();
 		scrollController.dispose();
 	}
+	
 	@override
 	Widget build(BuildContext context) {
 		return Scaffold(
@@ -69,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
 											child: ListView.builder(
 												primary: false,
 												shrinkWrap: true,
+												physics: BouncingScrollPhysics(),
 												scrollDirection: Axis.horizontal,
 												itemCount: lChatItems == null ? 0 : lChatItems.length,
 												controller: scrollController,
@@ -79,7 +78,28 @@ class _MyHomePageState extends State<MyHomePage> {
 										),
 									),
 									Expanded(
-										child: ChatListingContent(),
+										child: Container(
+											child: ClipRRect(
+												borderRadius: BorderRadius.only(
+													topLeft: Radius.circular(32.0),
+													topRight: Radius.circular(32.0),
+												),
+												child: Column(
+													mainAxisSize: MainAxisSize.max,
+													children: <Widget>[
+														Expanded(
+															child: Container(
+																padding: EdgeInsets.symmetric(horizontal: 16.0),
+																decoration: BoxDecoration(
+																	color: Colors.blueAccent,
+																),
+															),
+														),
+														BottomBar(),
+													],
+												),
+											),
+										),
 									),
 								],
 							),
