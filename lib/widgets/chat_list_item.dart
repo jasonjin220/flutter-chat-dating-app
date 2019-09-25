@@ -30,7 +30,7 @@ class ChatListItem extends StatelessWidget{
 									),
 								),
 								SizedBox(
-									width: 8,
+									width: 10,
 								),
 								Text(
 									"8.24 PM",

@@ -12,8 +12,8 @@ class CustomAppBar extends StatelessWidget{
 							begin: Alignment.bottomLeft,
 							end: Alignment.topRight,
 							colors: [
-								Color.fromRGBO(178,34,34, 1.0),
-								Color.fromRGBO(178,34,34, 1.0),
+								Color.fromRGBO(204,0,0, 1.0),
+								Color.fromRGBO(153,0,0, 1.0),
 							],
 						),
 					),
