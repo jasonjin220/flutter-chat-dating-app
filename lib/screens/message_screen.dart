@@ -15,17 +15,29 @@ class MessageScreen extends StatefulWidget {
 }
 class MessageScreenState extends State<MessageScreen> {
 	
-	final messageController = TextEditingController();FocusNode _focusNode;
+	final messageController = TextEditingController();
+	
+	bool isMessageInputEdited = false;
 	
 	@override
 	void initState() {
 		super.initState();
-		_focusNode = FocusNode();
+		// Start listening to changes in message textfield
+		messageController.addListener(_messageInputChange);
 	}
 	@override
 	void dispose() {
 		super.dispose();
-		_focusNode.dispose();
+		messageController.dispose();
+	}
+	
+	_messageInputChange() {
+		if(messageController.text.length <= 0){
+		
+		}
+		setState(() {
+			 isMessageInputEdited = (messageController.text.length > 0);
+		});
 	}
 	
 	@override
@@ -59,25 +71,30 @@ class MessageScreenState extends State<MessageScreen> {
 				),
 				preferredSize: Size.square(kToolbarHeight),
 			),
-			body: SafeArea(
-				child: Stack(
-					children: <Widget>[
-						Positioned.fill(
-							child: Container(
-								decoration: BoxDecoration(
-									color: Colors.red
+			body: Stack(
+				children: <Widget>[
+					Positioned.fill(
+						child: Container(
+							decoration: BoxDecoration(
+								gradient: LinearGradient(
+									begin: Alignment.bottomLeft,
+									end: Alignment.bottomRight,
+									colors: [
+										Color.fromRGBO(240,128,128, 1.0),
+										Color.fromRGBO(240,128,128, 1.0),
+									],
 								),
 							),
 						),
-						Column(
-							mainAxisSize: MainAxisSize.max,
-							children: <Widget>[
-								messageListComponent(context),
-								createMessageInputComponent(context),
-							],
-						),
-					],
-				),
+					),
+					Column(
+						mainAxisSize: MainAxisSize.max,
+						children: <Widget>[
+							messageListComponent(context),
+							createMessageInputComponent(context),
+						],
+					),
+				],
 			),
 		);
 	}
@@ -103,10 +120,13 @@ class MessageScreenState extends State<MessageScreen> {
 		return Expanded(
 			flex: 1,
 			child: Container(
-				height: double.infinity,
 				padding: EdgeInsets.fromLTRB(24, 8, 8, 24),
 				decoration: BoxDecoration(
-					color: Colors.blueAccent,
+					color: Colors.white,
+					borderRadius: BorderRadius.only(
+						bottomLeft: Radius.circular(36.0),
+						bottomRight: Radius.circular(36.0),
+					),
 				),
 			),
 		);
@@ -115,7 +135,7 @@ class MessageScreenState extends State<MessageScreen> {
 	Widget createMessageInputComponent (BuildContext context) {
 		// wrapped around a column so that the avatar doesn't stretch
 		return Container(
-			padding: EdgeInsets.fromLTRB(24, 8, 8, 24),
+			padding: EdgeInsets.fromLTRB(24, 16, 16, 12),
 			decoration: BoxDecoration(
 				color: Colors.transparent,
 			),
@@ -127,19 +147,17 @@ class MessageScreenState extends State<MessageScreen> {
 				cursorColor: Colors.white,
 				controller: messageController,
 				keyboardType: TextInputType.multiline,
-				focusNode: _focusNode,
 				maxLines: null,
-				autofocus:false ,
-				textInputAction: TextInputAction.done,
-				onEditingComplete: () {
-					print("edit");
-					_focusNode.unfocus();
-				},
+				autofocus:false,
 				decoration: InputDecoration(
-					contentPadding: EdgeInsets.fromLTRB(16.0, 8.0, 20.0, 8.0),
+					contentPadding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 8.0),
 					prefixIcon: Icon(
 						Icons.insert_emoticon,
 						color: Colors.white.withOpacity(0.6),
+					),
+					suffixIcon: Icon(
+						Icons.send,
+						color: Colors.white.withOpacity(isMessageInputEdited ? 1.0 : 0.4),
 					),
 					hintText: "Type you message here",
 					hintStyle: TextStyle(
@@ -152,11 +170,11 @@ class MessageScreenState extends State<MessageScreen> {
 						),
 						borderRadius: BorderRadius.circular(32.0),
 					),
-					fillColor: Color.fromRGBO(204,0,0, 1.0),
+					fillColor: Color.fromRGBO(205,92,92, 0.8),
 					filled: true,
 					focusedBorder: OutlineInputBorder(
 						borderSide: BorderSide(
-							color: Colors.white.withOpacity(0.6),
+							color: Colors.white.withOpacity(0.0),
 							width: 0.5,
 						),
 						borderRadius: BorderRadius.circular(32.0),

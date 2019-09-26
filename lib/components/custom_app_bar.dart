@@ -9,11 +9,11 @@ class CustomAppBar extends StatelessWidget{
 				Container(
 					decoration: BoxDecoration(
 						gradient: LinearGradient(
-							begin: Alignment.bottomLeft,
-							end: Alignment.topRight,
+							begin: Alignment.topLeft,
+							end: Alignment.bottomRight,
 							colors: [
-								Color.fromRGBO(204,0,0, 1.0),
-								Color.fromRGBO(153,0,0, 1.0),
+								Color.fromRGBO(240,128,128, 1.0),
+								Color.fromRGBO(255,77,77, 1.0),
 							],
 						),
 					),
