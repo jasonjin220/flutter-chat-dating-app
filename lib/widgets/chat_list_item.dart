@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_dating_app/screens/message_screen.dart';
 
 class ChatListItem extends StatelessWidget{
 	
@@ -11,7 +12,13 @@ class ChatListItem extends StatelessWidget{
 		return
 			Material(
 				child: InkWell(
-					onTap: (){print("tapped");},
+					onTap: (){
+						Navigator.push(
+							context,
+							MaterialPageRoute(
+								builder: (context) => MessageScreen(chatDetails: "Francis O'Reilly")),
+						);
+					},
 					child: Padding(
 						padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 16.0),
 						child: Row(
