@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_dating_app/screens/message_screen.dart';
 
-class ChatListItem extends StatelessWidget{
+class RecentChatListItem extends StatelessWidget{
 	
 	final int listPosition;
 
-    const ChatListItem({Key key, this.listPosition}) : super(key: key);
+    const RecentChatListItem({Key key, this.listPosition}) : super(key: key);
 	
 	@override
 	Widget build(BuildContext context) {
@@ -69,7 +69,7 @@ class ChatListItem extends StatelessWidget{
 					"4",
 					style: TextStyle(
 						color: Colors.white,
-						fontSize: 14.0,
+						fontSize: 12.0,
 					),
 				),
 			);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_dating_app/components/bottom_bar.dart';
 import 'package:flutter_chat_dating_app/components/custom_app_bar.dart';
-import 'package:flutter_chat_dating_app/widgets/chat_list_item.dart';
+import 'package:flutter_chat_dating_app/widgets/recent_chat_list_item.dart';
 import 'package:flutter_chat_dating_app/widgets/dashed_list_divider.dart';
 import 'package:flutter_chat_dating_app/widgets/friends_list_item.dart';
 
@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
 						totalWidth : MediaQuery.of(context).size.width , dashWidth: 16.0,
 						emptyWidth: 16.0, dashHeight: 1.0, dashColor : Colors.grey.shade400),
 					itemBuilder: (context, index){
-						return ChatListItem(listPosition : index);
+						return RecentChatListItem(listPosition : index);
 					},
 				),
 			),
