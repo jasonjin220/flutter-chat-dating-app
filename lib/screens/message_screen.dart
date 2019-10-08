@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_chat_dating_app/components/custom_app_bar.dart';
 
 class MessageScreen extends StatefulWidget {
 	
