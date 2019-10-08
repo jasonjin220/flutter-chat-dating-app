@@ -80,8 +80,8 @@ class MessageScreenState extends State<MessageScreen> {
 									begin: Alignment.bottomLeft,
 									end: Alignment.bottomRight,
 									colors: [
-										Color.fromRGBO(240,128,128, 1.0),
-										Color.fromRGBO(240,128,128, 1.0),
+										Color.fromRGBO(220,20,60, 1.0),
+										Color.fromRGBO(220,20,60, 1.0),
 									],
 								),
 							),
@@ -101,8 +101,8 @@ class MessageScreenState extends State<MessageScreen> {
 	
 	Widget circleAppBarImage () {
 		// wrapped around a column so that the avatar doesn't stretch
-		return Padding(
-			padding: EdgeInsets.only(right: 10),
+		return Container(
+			margin: EdgeInsets.only(right: 10),
 			child: Column(
 				mainAxisAlignment: MainAxisAlignment.center,
 				children: <Widget>[
